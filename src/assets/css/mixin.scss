@@ -1,0 +1,99 @@
+// 清除浮动
+@mixin clearfix {
+    *zoom: 1;
+    &:after {
+        content: ".";
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+%clearfix {
+    @include clearfix;
+}
+
+// 颜色设置
+@mixin colors($text, $background, $border) {
+    color: $text;
+    background-color: $background;
+    border-color: $border;
+}
+
+// 背景图片地址和大小
+@mixin bis($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/**
+* 溢出省略号
+* @param {Number} 行数
+*/
+
+@mixin ellipsis($rowCount: 1) {
+    @if $rowCount <=1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    @else {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $rowCount;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.mutil-line-ellipsis {
+    height: 75px;
+    line-height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    &:before {
+        content: "";
+        float: left;
+        width: 5px;
+        height: 75px;
+    }
+    > :first-child {
+        float: right;
+        width: 100%;
+        margin-left: -5px;
+        word-break: break-all;
+    }
+    &:after {
+        content: "...";
+        box-sizing: content-box;
+        float: right;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        top: -25px;
+        left: 100%;
+        margin-left: -50px;
+        padding-right: 5px;
+        font-size: 13px;
+        text-align: right;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 40px);
+    }
+}
