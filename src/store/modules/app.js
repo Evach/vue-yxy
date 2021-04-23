@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 
 const state = {
   size: Cookies.get("size") || "medium",
-  selectedSubmenuIndex: "",
+  selectedSubmenuChildPath: "",
   selectedSubmenuPath: "",
 };
 
@@ -11,8 +11,8 @@ const mutations = {
     state.size = size;
     Cookies.set("size", size);
   },
-  SELECTED_SUBMENU: (state, { index, item }) => {
-    state.selectedSubmenuIndex = index;
+  SELECTED_SUBMENU: (state, { child, item }) => {
+    state.selectedSubmenuChildPath = child;
     state.selectedSubmenuPath = item;
   },
 };
@@ -22,6 +22,7 @@ const actions = {
     commit("SET_SIZE", size);
   },
   selectedSubmenu({ commit }, data) {
+    // console.log(data);
     commit("SELECTED_SUBMENU", data);
   },
 };

@@ -6,19 +6,15 @@
 
 <script>
 export default {
-  name: 'app',
+  name: "app",
   data() {
-    return {}
+    return {};
   },
 
-  watch: {}
-}
+  watch: {},
+};
 </script>
 
-<style>
-* {
-  padding: 0;
-  margin: 0;
-  user-select: none;
-}
+<style lang="scss">
+// @import "~a/css/variables.scss";
 </style>

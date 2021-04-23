@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@import url(f:\影像云\vue-yxy\src\assets\css\reset.css);
+:export {
+  menuText: #bfcbd9;
+  menuActiveText: #409EFF;
+  subMenuActiveText: #f4f4f5;
+  menuBg: #304156;
+  menuHover: #263445;
+  subMenuBg: #1f2d3d;
+  subMenuHover: #001528;
+  sideBarWidth: 210px;
+}
+
+:export {
+  menuText: #bfcbd9;
+  menuActiveText: #409EFF;
+  subMenuActiveText: #f4f4f5;
+  menuBg: #304156;
+  menuHover: #263445;
+  subMenuBg: #1f2d3d;
+  subMenuHover: #001528;
+  sideBarWidth: 210px;
+}
+
+body {
+  line-height: 1;
+  font-family: "PingFang SC", "Microsoft Yahei", "Helvetica-Light", arial, sans-serif, "Droid Sans Fallback";
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #333;
+  font-size: 14px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#app {
+  min-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  /* background: $color-background-grey; */
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #app #app {
+    height: 100%;
+    /* background:$color-background-grey; */
+    min-width: 100%;
+  }
+}
+
+.clearfix {
+  display: table;
+  zoom: 1;
+}
+
+/*-height:1%;*/
+.clearfix:after {
+  display: block;
+  height: 0;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+img {
+  border: 0;
+}
+
+.tabs-textstyle .el-tabs__item {
+  font-size: 15px !important;
+  font-weight: bold;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+/* 定义项目样式 */
+/*.el-button:active,
+.el-button:hover {
+  color: #00abad;
+  background-color: transparent;
+}
+
+ .el-button--text,
+.el-button--text:active,
+.el-select-dropdown__item.selected {
+  color: #00abad;
+}
+
+.el-button--primary {
+  background-color: #00abad;
+  border-color: #00abad;
+} */

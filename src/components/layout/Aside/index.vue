@@ -13,17 +13,18 @@
     >
       <template v-for="item in routes">
         <el-submenu :index="item.path" :key="item.name">
-          <template slot="title" :index="item.path">
+          <template slot="title">
             <i class="el-icon-location"></i>
             <span slot="title">{{ item.meta.title }}</span>
           </template>
 
           <template v-for="(child, index) in item.children">
             <el-menu-item
+              v-if="!child.meta.hide"
               :key="child.name"
               :index="child.path"
               :class="
-                selectedSubmenuIndex === index &&
+                selectedSubmenuChildPath === child.path &&
                 selectedSubmenuPath === item.path
                   ? 'active'
                   : ''
@@ -53,34 +54,29 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["selectedSubmenuIndex", "selectedSubmenuPath"]),
+    ...mapGetters(["selectedSubmenuChildPath", "selectedSubmenuPath"]),
   },
   mounted() {
     const path = this.$route.path.split("/").slice(1);
-    let _index = 0;
-    this.routes.forEach((el, index) => {
+
+    this.routes.forEach((el) => {
       this.defaultOpenIndex.push(el.path);
-      if (el.path === path[1]) {
-        _index = index;
-      }
     });
 
     this.$store.dispatch("app/selectedSubmenu", {
-      index: _index,
+      child: path[1],
       item: "/" + path[0],
     });
   },
   methods: {
-    setPath(item, child, index) {
+    setPath(item, child) {
       this.$router.push(`${item}/${child}`);
-      // this.current = index;
-      // this.currentPath = item;
-      this.$store.dispatch("app/selectedSubmenu", { index, item });
+
+      this.$store.dispatch("app/selectedSubmenu", { child, item });
     },
 
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
-      this.$router.push(key);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);

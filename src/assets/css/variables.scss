@@ -21,6 +21,44 @@ $subMenuHover:#001528;
 
 $sideBarWidth: 210px;
 
+// 颜色定义规范
+ 
+$colorBackground: #f0f2f5;
+$colorBorder: #213c6a;
+$colorText: #333;
+ 
+
+//字体定义规范 
+$font-size-small: 12px;
+$font-size-medium: 14px;
+$font-size-medium-x: 16px;
+$font-size-large: 18px;
+$font-size-large-x: 22px;
+
+//按钮相关
+$button-base-color: #faab2d;
+$button-base-hover-color: #eb9a17;
+$button-new: #6a79bd;
+$button-revise: #bf6d4d;
+$button-del: #cacbd1;
+$button-text-color: #fff;
+$button-text-color-hover: #faab2d;
+$button-newly-added: #6a79bd;
+$button-query: #3e424e;
+$button-icon-search-bg: #aaabb3;
+$button-icon-search-hover: #737480;
+
+//状态相关
+$status-normal: #4f9e79;
+$status-warn: #d67f33;
+$status-danger: #ed3e3e;
+$status-abandon: #babbc2;
+
+
+
+
+
+
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
@@ -32,4 +70,5 @@ $sideBarWidth: 210px;
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
+  
 }

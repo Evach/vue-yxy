@@ -22,14 +22,13 @@ export default {
   components: { Header, Aside },
   computed: {
     hidden() {
-      console.log(this.$route.meta.hidden);
       return this.$route.meta.hidden;
     },
   },
   mounted() {
-    // console.log(this.$route);
+    console.log(this.$route);
   },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

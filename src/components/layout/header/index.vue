@@ -42,6 +42,7 @@ export default {
   h1 {
     height: 40px;
     margin: 0;
+    font-size: 30px;
   }
 
   .header_right {

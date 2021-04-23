@@ -1,0 +1,55 @@
+ .clearfix {
+   display: table;
+   zoom: 1;
+ }
+
+ /*-height:1%;*/
+ .clearfix:after {
+   display: block;
+   height: 0;
+   content: ".";
+   font-size: 0;
+   line-height: 0;
+   clear: both;
+   visibility: hidden;
+ }
+
+ img {
+   border: 0;
+ }
+
+ .tabs-textstyle .el-tabs__item {
+   font-size: 15px !important;
+   font-weight: bold;
+ }
+
+ .fr {
+   float: right;
+ }
+
+ .fl {
+   float: left;
+ }
+
+ /* 定义项目样式 */
+
+ .el-rate{
+   display: inline-block;
+ }
+
+ /*.el-button:active,
+.el-button:hover {
+  color: #00abad;
+  background-color: transparent;
+}
+
+ .el-button--text,
+.el-button--text:active,
+.el-select-dropdown__item.selected {
+  color: #00abad;
+}
+
+.el-button--primary {
+  background-color: #00abad;
+  border-color: #00abad;
+} */

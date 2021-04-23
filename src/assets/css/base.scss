@@ -1,0 +1,26 @@
+@import "./variables.scss";
+body {
+  line-height: 1;
+  font-family: "PingFang SC", "Microsoft Yahei", "Helvetica-Light", arial,
+    sans-serif, "Droid Sans Fallback";
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  // background: $colorBackground;
+  color: $colorText;
+  font-size: $font-size-medium;
+  height: 100%;
+  // overflow-y: hidden;
+}
+#app {
+  min-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  /* background: $color-background-grey; */
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    #app {
+      height: 100%;
+      /* background:$color-background-grey; */
+      min-width: 100%;
+    }
+  }
+}

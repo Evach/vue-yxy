@@ -34,3 +34,11 @@ export function getConsultList(data) {
     data,
   });
 }
+
+export function getPublishList(data) {
+  return request({
+    url: `${LOCAL_URL}/publish`,
+    method: "POST",
+    data,
+  });
+}

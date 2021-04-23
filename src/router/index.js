@@ -8,9 +8,30 @@ const Reg = () => import(/*webpackChunkName:'register'*/ "p/register"); //注册
 const Login = () => import(/*webpackChunkName:'login'*/ "p/login"); //登录
 const Search = () => import(/*webpackChunkName:'search'*/ "p/search"); //搜索
 const Consult = () => import(/*webpackChunkName:'consult'*/ "p/deal/consult"); //咨询
+const ConsultDetail = () =>
+  import(
+    /*webpackChunkName:'consultDetail'*/ "p/deal/components/consultDetail"
+  ); //咨询详情
+const EvaluateDetail = () =>
+  import(
+    /*webpackChunkName:'evaluateDetail'*/ "p/deal/components/evaluateDetail"
+  ); //咨询评价
+const ComplaintDetail = () =>
+  import(
+    /*webpackChunkName:'complaintDetail'*/ "p/deal/components/complaintDetail"
+  ); //咨询投诉
 const Order = () => import(/*webpackChunkName:'order'*/ "p/deal/order"); //订单
 const Publish = () => import(/*webpackChunkName:'publish'*/ "p/deal/publish"); //发布
 const User = () => import(/*webpackChunkName:'user'*/ "p/account/user"); //用户信息
+// const UserInfo = () =>
+//   import(/*webpackChunkName:'userInfo'*/ "p/account/components/userInfo"); //用户信息
+// const CompanyInfo = () =>
+//   import(/*webpackChunkName:'companyInfo'*/ "p/account/components/companyInfo"); //用户信息
+const CompleteInfo = () =>
+  import(
+    /*webpackChunkName:'completeInfo'*/ "p/account/components/completeInfo"
+  ); //用户信息
+
 const ForgetPsw = () =>
   import(/*webpackChunkName:'forgetPsw'*/ "p/account/forgetPsw"); //忘记密码
 
@@ -117,6 +138,36 @@ export const asyncRoutes = [
         },
       },
       {
+        path: "consult/detail",
+        name: "ConsultDetail",
+        component: ConsultDetail,
+        meta: {
+          title: "咨询详情",
+          requireAuth: true,
+          hide: true,
+        },
+      },
+      {
+        path: "consult/evaluate",
+        name: "EvaluateDetail",
+        component: EvaluateDetail,
+        meta: {
+          title: "咨询评价",
+          requireAuth: true,
+          hide: true,
+        },
+      },
+      {
+        path: "consult/complaint",
+        name: "ComplaintDetail",
+        component: ComplaintDetail,
+        meta: {
+          title: "咨询投诉",
+          requireAuth: true,
+          hide: true,
+        },
+      },
+      {
         path: "order",
         name: "Order",
         component: Order,
@@ -150,6 +201,36 @@ export const asyncRoutes = [
         meta: {
           title: "账号信息",
           requireAuth: true,
+        },
+      },
+      // {
+      //   path: "/account/userInfo",
+      //   name: "UserInfo",
+      //   component: UserInfo,
+      //   meta: {
+      //     title: "账号信息（个人）",
+      //     requireAuth: true,
+      //     hide: true,
+      //   },
+      // },
+      // {
+      //   path: "/account/companyInfo",
+      //   name: "CompanyInfo",
+      //   component: CompanyInfo,
+      //   meta: {
+      //     title: "账号信息（企业）",
+      //     requireAuth: true,
+      //     hide: true,
+      //   },
+      // },
+      {
+        path: "/account/completeInfo",
+        name: "CompleteInfo",
+        component: CompleteInfo,
+        meta: {
+          title: "设置账号信息",
+          requireAuth: true,
+          hide: true,
         },
       },
       {
